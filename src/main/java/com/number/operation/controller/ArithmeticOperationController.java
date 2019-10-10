@@ -21,6 +21,12 @@ public class ArithmeticOperationController {
     @Qualifier(value = "arithmeticOperationService")
     private ArithmeticOperationService arithmeticOperationService;
 
+
+    @RequestMapping(path = "/build", method = RequestMethod.GET)
+    private String buildInfo() {
+        return "test-build";
+    }
+
     @RequestMapping(path = "/plus", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     private ArithmeticOperationResponse sumTwoNumbers(@Valid @RequestBody ArithmeticOperationRequest request) {
